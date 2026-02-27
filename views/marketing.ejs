@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Transform your spaces with expert interior design solutions! Discover stunning designs, personalized services, and innovative ideas to create the home or office of your dreams">
+        <meta name="keywords"
+            content="Interior design, Home decor, Office Interiors, Modern interior design, Luxury interiors, Space planning, Interior styling, Personalized design services, Contemporary decor, Interior design trends">
+        <title>Real Estate - Sivra Spaces</title>
+        <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.png" />
+        <link rel="stylesheet" href="/assets/owl-carousel/owl1.carousel.min.css" />
+        <link rel="stylesheet" href="/assets/owl-carousel/owl1.theme.default.min.css" />
+        <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+        <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/assets/bootstrap-icons/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="/assets/aos/aos.css">
+        <link rel="stylesheet" href="/assets/css/common.css">
+        <link rel="stylesheet" href="/assets/sweetalert/sweetalert2.css">
+        <style>
+            #pdf-container {
+                /* width: 400px; */
+                /* Adjust to your desired width */
+                /* height: 250px; */
+                /* The container height (max height for the PDF preview) */
+                overflow: hidden;
+                /* Hide anything that overflows from the container */
+                /* border: 1px solid #000; */
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                /* Add spacing between the PDFs */
+                /* justify-content: space-between; */
+            }
+
+            .pdf-canvas {
+                width: 100%;
+                /* height: auto; */
+                height: 90%;
+                /* border: 1px solid #ccc; */
+            }
+
+            #pdf-container a {
+                flex: 1 1 calc(33.33% - 20px);
+                /* Allow three items per row with a gap */
+                max-width: calc(33.33% - 20px);
+                box-sizing: border-box;
+            }
+
+            .pdf-wrapper {
+                /* flex: 1 1 calc(33.33% - 20px); */
+                /* Allow three items per row with a gap */
+                /* max-width: calc(33.33% - 20px); */
+                /* box-sizing: border-box; */
+                height: 400px;
+            }
+
+            .pdf-title {
+                width: 100%;
+                height: 10%;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                box-sizing: border-box;
+                margin-top: -10px;
+                text-transform: capitalize;
+                border-radius: 0px 0px 10px 10px;
+            }
+        </style>
+        <!-- <link rel="stylesheet" href="/assets/css/about.css"> -->
+    </head>
+</head>
+
+<body>
+    <div class="marketing-outer-wrapper">
+        <div class="header-wrapper">
+            <div class="header-contactdetails-wrapper">
+                <div class="header-contactdetails-textbox">
+                    <span>Call Now: +91 91331 32333, +91 81060 37771 | Email: sivraspaces.interiors@gmail.com
+                    </span>
+                    <span>Opening time: Sun-Sat 9:00 AM - 7:00 PM
+                    </span>
+                </div>
+            </div>
+            <div class="header-navigation-wrapper">
+                <div>
+                    <%- include('./partials/header') %>
+                </div>
+            </div>
+        </div>
+        <div class="body-wrapper">
+            <main>
+                <section id="breadcrumb" class="breadcrumb-section">
+                    <div class="breadcrumb-wrapper">
+                        <img src="/assets/img/breadcrumb/services.png" alt="services breadcrumb image">
+                        <div class="breadcrumb-overlay"></div>
+                        <div class="breadcrumb-text">
+                            <h2><span style="color: #F45B1E;">MARKETING</span></h2>
+                            <p>Creative Marketing Strategies to Drive Success</p>
+                            <div class="breadcrumb-path">
+                                <span style="color: black;">HOME</span> <i class="bi bi-dot"></i> <span>Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section>
+                    <div class="container my-5">
+                        <div class="row align-items-center">
+                            <!-- Text Section -->
+                            <div class="col-md-6">
+                                <h3 class="fw-bold">
+                                    <span class="text-uppercase">Dependable</span>
+                                    <span class="text-uppercase highlight-word">Construction Solutions</span>
+                                </h3>
+                                <p class="mt-3">
+                                    At ATL Groups, we specialize in transacting across residential, commercial, and
+                                    retail asset classes, delivering personalized real estate solutions to meet the
+                                    unique needs of our clients. We combine in-depth market knowledge with a systematic
+                                    sales strategy that ensures every transaction is managed with precision and care.
+                                </p>
+                                <p>
+                                    This version retains your emphasis on the future-oriented and community-focused
+                                    approach, while adding a more narrative style that underscores your passion and
+                                    commitment as real estate marketers. It reflects a sense of purpose and a deep
+                                    connection to the visionary aspects of your work, making it clear that your company
+                                    is about more than just sales—it's about creating impactful, sustainable change in
+                                    real estate.
+                                </p>
+                            </div>
+                            <!-- Image Section -->
+                            <div class="col-md-6 text-center">
+
+                                <img src="/assets/img/services/construction/construction.png" alt="construction Image"
+                                    class="img-fluid  rounded">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Catalogue -->
+                <section style="background-color: #132023; color: white;">
+                    <div class="container py-5">
+                        <h3 class="py-2">Catalogue</h3>
+                        <div class="row" id="pdf-container">
+
+                        </div>
+                    </div>
+                </section>
+                <!-- footer -->
+                <section id="footer" class="footer-wrapper">
+                    <%- include('./partials/footer') %>
+                </section>
+
+                <section id="get-a-quote-sticker" class="get-a-quote-sticker-wrap d-flex flex-column">
+                    <%- include('./partials/get-quote-sticker') %>
+                </section>
+
+                <section>
+                    <div class="overlay" id="overlay"></div>
+                    <div id="get-a-quote-dialog" class="get-a-quote-dialog">
+                        <div style="text-align: right;" id="cancel-quote-form">
+                            <i class="bi bi-x-circle-fill" style="font-size: 40px;"></i>
+                        </div>
+                        <div>
+                            <%- include('./partials/get-quote-form') %>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%- include('./partials/mobile-nav') %>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="/assets/JQuery/jquery1.min.js"></script>
+    <script src="/assets/owl-carousel/owl1.carousel.min.js"></script>
+    <script src="/assets/JS/mobile-navigation-script.js"></script>
+    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="/assets/JS/get-a-quote-dialog-script.js"></script>
+    <script src="/assets/JS/contact-form-submission.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".testimonial-carousel").owlCarousel({
+                loop: true,
+                margin: 0,
+                dots: true,
+                items: 1,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: false,
+            });
+        });
+
+    </script>
+    <!-- <script>
+
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch the catalogs
+                const response = await fetch('/admin/catalogs/read');
+                if (!response.ok) throw new Error("Failed to fetch catalogs");
+                const catalogs = await response.json();
+                console.log('catalogs', catalogs);
+
+                // Iterate over each catalog and render the PDF
+                catalogs.forEach((catalog, index) => {
+                    renderPDF(catalog.pdfPath, index);
+                });
+            } catch (error) {
+                console.error("Error fetching catalogs:", error);
+            }
+        });
+
+        // Function to render the top half of the PDF
+        async function renderPDF(pdfPath, index) {
+            const containerHeight = 500; // Max container height
+            const pdfContainer = document.getElementById('pdf-container');
+
+            try {
+                const pdf = await pdfjsLib.getDocument(pdfPath).promise;
+                const page = await pdf.getPage(1);
+                const viewport = page.getViewport({ scale: 1 });
+
+                // Calculate the scale for half-page rendering
+                const halfPageScale = containerHeight / (viewport.height / 2);
+                const scaledViewport = page.getViewport({ scale: halfPageScale });
+
+                // Create a canvas for the PDF
+                const canvas = document.createElement('canvas');
+                canvas.id = `pdf-canvas-${index}`;
+                canvas.className = 'pdf-canvas'
+                canvas.style.border = '1px solid #ccc';
+                const context = canvas.getContext('2d');
+                canvas.width = scaledViewport.width;
+                canvas.height = scaledViewport.height;
+
+                // Render the PDF on the canvas
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: scaledViewport
+                };
+                await page.render(renderContext);
+
+                // Append the canvas to the container
+                const canvasWrapper = document.createElement('div');
+                canvasWrapper.style.marginBottom = '20px';
+                canvasWrapper.appendChild(canvas);
+                pdfContainer.appendChild(canvasWrapper);
+            } catch (error) {
+                console.error('Error rendering PDF:', error, pdfPath);
+            }
+        }
+    </script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch the catalogs
+                const response = await fetch('/admin/catalogs/read');
+                if (!response.ok) throw new Error("Failed to fetch catalogs");
+                const catalogs = await response.json();
+                console.log('catalogs', catalogs);
+
+                // Iterate over each catalog and render the PDF
+                catalogs.forEach((catalog, index) => {
+                    renderPDF(catalog.pdfPath, catalog.title, index);
+                });
+            } catch (error) {
+                console.error("Error fetching catalogs:", error);
+            }
+        });
+
+        // Function to render the top half of the PDF
+        async function renderPDF(pdfPath, title, index) {
+            const containerHeight = 500; // Max container height
+            const pdfContainer = document.getElementById('pdf-container');
+
+            try {
+                const pdf = await pdfjsLib.getDocument(pdfPath).promise;
+                const page = await pdf.getPage(1);
+                const viewport = page.getViewport({ scale: 1 });
+
+                // Calculate the scale for half-page rendering
+                const halfPageScale = containerHeight / (viewport.height / 2);
+                const scaledViewport = page.getViewport({ scale: halfPageScale });
+
+                // Create a canvas for the PDF
+                const canvas = document.createElement('canvas');
+                canvas.id = `pdf-canvas-${index}`;
+                canvas.className = 'pdf-canvas';
+                const context = canvas.getContext('2d');
+                canvas.width = scaledViewport.width;
+                canvas.height = scaledViewport.height;
+
+                // Render the PDF on the canvas
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: scaledViewport
+                };
+                await page.render(renderContext);
+
+                // Create a title for the canvas
+                const canvasTitle = document.createElement('div');
+                canvasTitle.className = 'pdf-title';
+                canvasTitle.innerText = title;
+
+                // Create an anchor tag that wraps the PDF canvas and title
+                const aTag = document.createElement('a');
+                aTag.setAttribute("href", `${window.location.origin}${pdfPath}`);
+                aTag.setAttribute("target", "_blank");
+                aTag.style.textDecoration = "none"; // Optional: remove underline
+
+                // Wrap canvas and title inside a container
+                const canvasWrapper = document.createElement('div');
+                canvasWrapper.className = 'pdf-wrapper';
+                canvasWrapper.appendChild(canvas);
+                canvasWrapper.appendChild(canvasTitle);
+
+                // Append the wrapper to the anchor tag
+                aTag.appendChild(canvasWrapper);
+
+                // Append the anchor tag to the container
+                const column = document.createElement('div').setAttribute("class", "col-12 col-md-6 col-lg-4 mt-3");
+                column.appendChild(aTag);
+                pdfContainer.appendChild(column);
+            } catch (error) {
+                console.error('Error rendering PDF:', error, pdfPath);
+            }
+        }
+    </script>
+
+</body>
+
+</html>

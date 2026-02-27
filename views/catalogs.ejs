@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Transform your spaces with expert interior design solutions! Discover stunning designs, personalized services, and innovative ideas to create the home or office of your dreams">
+    <meta name="keywords"
+        content="Interior design, Home decor, Office Interiors, Modern interior design, Luxury interiors, Space planning, Interior styling, Personalized design services, Contemporary decor, Interior design trends">
+    <title>Catalogs - Sivra Spaces</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.png" />
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/bootstrap-icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/css/catalogs.css">
+    <link rel="stylesheet" href="/assets/sweetalert/sweetalert2.css">
+</head>
+
+<body>
+    <div>
+        <div class="catalogs-wrapper">
+            <div class="new-catalog-upload-section">
+                <form action="/admin/catalogs/upload/" method="POST" enctype="multipart/form-data"
+                    class="catalog-upload-form">
+                    <div class="catalog-upload-form-wrapper">
+                        <!-- <div class="text-center">
+                            <p style="margin: 0px; color: rgba(133, 133, 133, 0.51); font-family: Arial, Helvetica, sans-serif;">Catalog Upload Form</p>
+                        </div> -->
+                        <div class="text-center">
+                            <img src="/assets/img/SS.png" alt="logo">
+                        </div>
+                        <div class="catalog-title">
+                            <!-- <label for="title">Title:</label> -->
+                            <input type="text" id="title" name="title" placeholder="Enter Title" required />
+                        </div>
+                        <!-- <div class="file-upload-input">
+                            <label for="pdf">Upload PDF:</label>
+                            <input type="file" id="pdf" name="pdf" accept="application/pdf" required />
+                        </div> -->
+
+                        <div class="input_container mt-3">
+                            <label for="pdf" class="custom-file-upload upload-icon">
+                                <span><i class="bi bi-filetype-pdf"></i></span>
+                                <span>Upload PDF</span>
+                            </label>
+                            <input type="file" class="form-control-file" id="pdf" name="pdf" accept=".pdf" required />
+                            <span class="file-name" id="file-name"></span>
+                        </div>
+                        <!-- <div>
+                            <label for="thumbnail">Upload Thumbnail Image:</label>
+                            <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required />
+                        </div> -->
+                        <div class="text-center">
+                            <button type="submit">UPLOAD</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="catalogs-list">
+                <h4>Catalogs List</h4>
+                <table class="table table-bordered">
+                    <thead class="thead">
+                        <tr>
+                            <th scope="col">S.No</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Initial loading message will be placed here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <%- include('./partials/mobile-nav') %>
+    </div>
+    <script src="/assets/JS/mobile-navigation-script.js"></script>
+    <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
+    <script src="/assets/JS/get-a-quote-dialog-script.js"></script>
+    <script src="/assets/JS/contact-form-submission.js"></script>
+    <script>
+        // Get all file input elements
+        const fileInput = document.querySelector('input[type="file"]');
+        let fileName = document.getElementById("file-name");
+        console.log("fileInput", fileInput);
+        debugger
+        fileInput.addEventListener('change', function () {
+            // Check if any file is selected
+            if (fileInput.files.length > 0) {
+                // Display the file name
+                fileName.textContent = 'File selected: ' + fileInput.files[0].name;
+            } else {
+                // If no file is selected, clear the display
+                fileName.textContent = '';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const tableBody = document.querySelector("table tbody");
+
+            // Show the loading message
+            tableBody.innerHTML = `
+                <tr>
+                    <td colspan="3" class="text-center">Loading data, please wait...</td>
+                </tr>
+            `;
+
+            try {
+                const response = await fetch('/admin/catalogs/read'); // API call
+                if (!response.ok) throw new Error("Failed to fetch catalogs");
+
+                const catalogs = await response.json();
+
+                // Clear the loading message
+                tableBody.innerHTML = '';
+
+                // Populate the table with fetched data
+                catalogs.forEach((catalog, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <th scope="row">${index + 1}</th>
+                        <td>${catalog.title}</td>
+                        <td>
+                            <div class="d-flex align-items-center gap-2">
+                                <!-- View PDF -->
+                                <div >
+                                     <a href="${catalog.pdfPath}" target="_blank" class="btn btn-primary btn-sm">
+                                            <i class="bi bi-filetype-pdf"></i>
+                                    </a>
+                                </div>
+    
+                                <!-- Edit Icon -->
+                                <div id="edit-${catalog.id}" class="btn btn-warning btn-sm" style="cursor: pointer;">
+                                    <i class="bi bi-pencil-square btn-sm"></i>
+                                </div>
+    
+                                <!-- Delete Icon -->
+                                <div id="delete-${catalog.id}" class="btn btn-danger btn-sm" style="cursor: pointer;">
+                                    <i class="bi bi-trash "></i>
+                                </div>
+                            </div>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+
+                    // Attach event listeners for edit and delete
+                    document.getElementById(`edit-${catalog.id}`).addEventListener('click', () => {
+                        editCatalog(catalog.id);
+                    });
+
+                    document.getElementById(`delete-${catalog.id}`).addEventListener('click', () => {
+                        deleteCatalog(catalog.id);
+                    });
+                });
+            } catch (error) {
+                console.error("Error fetching catalogs:", error);
+
+                // Show an error message
+                tableBody.innerHTML = `
+                    <tr>
+                        <td colspan="3" class="text-center text-danger">Failed to load data. Please try again later.</td>
+                    </tr>
+                `;
+            }
+        });
+
+        // Function to handle edit action
+        function editCatalog(id) {
+            console.log(`Edit action for catalog ID: ${id}`);
+            // Add your edit logic here
+            alert(`Edit catalog with ID: ${id}`);
+        }
+
+        // Function to handle delete action
+        async function deleteCatalog(id) {
+            try {
+                const deleteResponse = await fetch(`/admin/catalogs/delete/${id}`, {
+                    method: 'DELETE',
+                });
+                debugger
+                console.log("delete response: " , deleteResponse)
+
+                if (!deleteResponse.redirected) throw new Error('Failed to delete item');
+                
+                // Refresh the catalogs list
+                location.reload();
+                alert('Catalog deleted successfully');
+            } catch (error){
+                console.error("Error deleting catalog:", error);
+                alert("Failed to delete catalog. Please try again later.");
+            }
+           
+        }
+    </script>
+
+</body>
+
+</html>

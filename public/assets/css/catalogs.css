@@ -1,0 +1,119 @@
+.catalogs-wrapper{
+    padding: 20px;
+    /* box-shadow: 0px 0px 10px rgb(213, 213, 213); */
+    border-radius: 10px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.catalog-upload-form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* height: 100vh; */
+    width: 500px;
+    gap: 20px;
+}
+@media screen and (max-width:450px){
+    .catalog-upload-form {
+        width: 300px;
+    }
+    .catalog-upload-form img{
+        width: 250px;
+    }
+}
+
+.catalog-upload-form-wrapper {
+    background-color: rgb(255, 255, 255);
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.catalog-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.catalog-title input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--primary-red);
+    padding: 10px 15px;
+}
+
+.file-upload-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input_container input[type="file"] {
+    display: none;
+}
+
+.input_container {
+    border: 1px solid var(--primary-red);
+    font-family: "Times New Roman", Times, serif;
+    border-radius: 5px;
+}
+
+.custom-file-upload {
+    background-color: var(--primary-red);
+    color: #ffffff;
+    padding: 10px 15px;
+    margin-right: 20px;
+    transition: 0.5s;
+    border-radius: 5px 0px 0px 5px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: coral;
+}
+
+#formsection {
+    background-color: rgba(144, 161, 216, 0.372);
+    background: linear-gradient(135deg, rgba(144, 161, 216, 0.372), rgba(216, 144, 161, 0.372));
+
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.catalog-upload-form button{
+    /* background-color: rgb(59, 166, 59); */
+    padding: 5px;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    border: 1px solid var(--primary-red);
+    background-color: var(--primary-red);
+
+}
+.catalog-upload-form button:hover{
+    scale: 0.95;
+}
+
+
+/*Responsiveness*/
+@media (min-width: 899px) and (max-width: 992px) {
+    .header-contactdetails-textbox>span {
+        size: 10px;
+        line-height: 12px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .header-contactdetails-wrapper {
+        display: none;
+    }
+}

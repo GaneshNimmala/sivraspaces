@@ -1,0 +1,511 @@
+.header-contactdetails-textbox>span {
+    /* font-family: Open Sans; */
+
+    font-weight: 400;
+    size: 18px;
+    line-height: 23.4px;
+    color: #F4F4F4;
+}
+
+@media (min-width: 899px) and (max-width: 992px) {
+    .header-contactdetails-textbox>span {
+        size: 10px;
+        line-height: 12px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .header-contactdetails-wrapper {
+        display: none;
+    }
+}
+
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* Full viewport height */
+    overflow: hidden;
+}
+
+.owl-carousel .item {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.owl-carousel .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    /* Adjust as needed for alignment */
+    transform: translateY(-50%);
+    color: #fff;
+    /* White text color */
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); */
+    /* Add a shadow for better readability */
+    /* font-family: 'Arial', sans-serif; */
+    max-width: 40%;
+    /* Ensure text doesn't span too wide */
+    z-index: 2;
+}
+
+.banner-text h2 {
+
+    font-size: 85px;
+    font-weight: 700;
+    line-height: 124.8px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.838), rgba(0, 0, 0, 0));
+    z-index: 1;
+}
+
+.banner-text p {
+    margin: 0;
+}
+
+.banner-text .banner-button {
+    margin-top: 35px;
+    margin-right: 10px;
+}
+
+.banner-text .banner-button .button1 {
+    background-color: var(--primary-red);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 163px;
+    height: 54px;
+    font-size: 18px;
+    line-height: 23.4px;
+    text-decoration: none;
+
+}
+
+
+.banner-text .banner-button .button2 {
+
+    color: var(--primary-red);
+    padding: 10px;
+    border-radius: 5px;
+    width: 163px;
+    height: 54px;
+    border: 1px solid var(--primary-red);
+    font-size: 18px;
+    line-height: 23.4px;
+    text-decoration: none;
+
+}
+
+
+
+/* what-we-do section css*/
+
+
+.what-we-do:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(255, 255, 255);
+    z-index: 1;
+}
+
+
+.what-we-do .row {
+    padding: 73px 0px 10px 35px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.what-we-do-services.row {
+    padding-top: 0px;
+    margin-top: -120px;
+}
+
+
+
+
+
+
+/* what-we-do section css */
+.what-we-do {
+    background-image: url('../img/whatwedo/background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    /* background-color: rgba(214, 208, 208, 0.381); */
+    /* background-blend-mode: multiply;
+    background-position: left; */
+}
+
+.what-we-do:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.905);
+    z-index: 1;
+}
+
+.what-we-do .container123 {
+    position: relative;
+    z-index: 2;
+  
+}
+
+
+
+
+
+.what-we-do .section-content p {
+    /* font-family: Open Sans; */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32.8px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #132023;
+    /* text-align: justify; */
+}
+
+.what-we-do .section-content h2 {
+    /* font-family: Open Sans; */
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 52px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.what-we-do .section-content span {
+    color: var(--primary-red);
+}
+
+/* Fixed height for service cards */
+.what-we-do .what-we-do-services .service-item {
+    display: flex;
+    height: 100%;
+}
+
+.what-we-do .what-we-do-services .service-item .service-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.what-we-do .what-we-do-services .service-item .service-content .service-image {
+    height: 280px;
+    overflow: hidden;
+}
+
+.what-we-do .what-we-do-services .service-item .service-content .service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.what-we-do .what-we-do-services .service-item .service-content .service-title {
+    color: white;
+    /* font-family: Open Sans; */
+    /* font-size: 24px; */
+    /* font-weight: 700; */
+    /* line-height: 31.2px; */
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    background: #132023;
+    padding: 29px 50px;
+
+}
+
+/* whyus */
+.why-us-section {
+    position: relative;
+    background-color: #F4F4F4;
+    padding-top: 20px;
+}
+
+.absolute-image-why-us-section {
+    position: absolute;
+    bottom: 2px;
+    left: 0px;
+}
+
+.absolute-image-why-us-section img {
+    width: 132px;
+    height: 837px;
+    z-index: 2;
+    transform: scaleX(-1);
+}
+
+.why-us-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-us-wrap .section-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    /* font-family: Open Sans; */
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 52px;
+}
+
+.why-us-wrap .section-content .figures {
+    display: flex;
+    gap: 60px;
+
+    padding: 20px 60px;
+    background-color: #132023;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.why-us-wrap .section-content .figures div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.why-us-wrap .section-content .figures div h3 {
+    color: var(--primary-red);
+
+}
+
+
+
+
+.about-company-values {
+    margin-top: 35px;
+}
+
+.about-company-values .content-column .goal {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.about-company-values .content-column .goal img {
+    width: 70px;
+    height: auto;
+
+}
+
+.about-company-values .content-column .goal .section-description {
+    text-transform: uppercase;
+    /* font-family: Open Sans; */
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 49.2px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}
+
+.about-company-values .content-column .goal .section-title {
+    color: var(--primary-red);
+}
+
+
+
+.our-services-section {
+    padding: 100px 80px 80px 80px;
+    background-image: url(../img/ourservices/background.png), url(../img/services/background3.png);
+    background-position: top center, bottom center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 70%, 100% 30%;
+    position: relative;
+    background-color: #132023c8;
+    /* background-color: #2b465cb4; */
+    /* background-blend-mode: multiply; */
+}
+
+.our-services-section:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsla(191, 30%, 11%, 0.416);
+    z-index: 1;
+}
+
+.our-services-section .container123 {
+    position: relative;
+    z-index: 2;
+
+}
+
+.our-services-section .section-content {
+    /* font-family: Open Sans; */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 32.8px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: white;
+}
+
+
+
+.our-services-section .service-card-title {
+    height: 108px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-red);
+    color: white;
+    text-align: center;
+    border-radius: 0px 0px 5px 5px;
+    /* font-family: Open Sans; */
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    text-transform: uppercase;
+
+}
+
+.our-services-section .service-cards .service-card-background {
+    background-image: url(../img/services/background2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 3;
+}
+
+
+
+.heading-line.right {
+    margin-left: 20px;
+}
+
+
+
+/*Extra Small Devices (0px - 576px)*/
+@media(max-width:576px) {
+    .banner-text h2 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    .banner-text {
+        max-width: none;
+    }
+
+    .owl-dots {
+        left: 12%;
+    }
+
+    .what-we-do-services.row {
+        padding-top: 0px;
+        margin-top: 0px;
+        padding-left: 0px;
+    }
+
+    .what-we-do .what-we-do-services .service-item .service-content,
+    .what-we-do .what-we-do-services .service-item .service-content img {
+        /* width: 100%; */
+        /* height: none; */
+        width: 100%;
+        height: auto;
+    }
+
+    .what-we-do .what-we-do-services .service-item {
+        /* width: 260px;
+        height: 380px; */
+        /* width:100%; */
+        width: 100%;
+        height: auto;
+        padding: 0px;
+    }
+
+    .why-us-section .absolute-image-why-us-section img {
+        display: none;
+    }
+
+    .why-us-wrap .section-content h2 {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .why-us-wrap .section-content .figures {
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .why-us-wrap .section-content .figures p {
+        font-size: 10px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .about-company-values .content-column {
+        padding: 40px;
+    }
+
+    .about-company-values .content-column .goal .section-description {
+        font-size: 18px;
+        line-height: 35px;
+    }
+
+    .our-services-section {
+        padding: 35px;
+    }
+
+    .latest-work {
+        padding: 35px;
+    }
+
+    .latest-work .image-category-tabs {
+        display: none;
+    }
+
+  
+}
+
+@media(max-width:400px) {
+    .banner-text h2 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+
+}

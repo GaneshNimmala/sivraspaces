@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+      content="Transform your spaces with expert interior design solutions! Discover stunning designs, personalized services, and innovative ideas to create the home or office of your dreams">
+    <meta name="keywords"
+      content="Interior design, Home decor, Office Interiors, Modern interior design, Luxury interiors, Space planning, Interior styling, Personalized design services, Contemporary decor, Interior design trends">
+    <title>Contact Us - Sivra Spaces</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.png" />
+    <link rel="stylesheet" href="/assets/owl-carousel/owl1.carousel.min.css" />
+    <link rel="stylesheet" href="/assets/owl-carousel/owl1.theme.default.min.css" />
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/bootstrap-icons/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/assets/aos/aos.css">
+    <link rel="stylesheet" href="/assets/css/common.css">
+    <link rel="stylesheet" href="/assets/css/contactus.css">
+    <link rel="stylesheet" href="/assets/sweetalert/sweetalert2.css">
+    <!-- <link rel="stylesheet" href="/assets/css/about.css"> -->
+  </head>
+</head>
+
+<body>
+  <div class="about-outer-wrapper">
+    <div class="header-wrapper">
+      <div class="header-contactdetails-wrapper">
+        <div class="header-contactdetails-textbox">
+          <span>Call Now: +91 91331 32333, +91 81060 37771 | Email: sivraspaces.interiors@gmail.com
+          </span>
+          <span>Opening time: Sun-Sat 9:00 AM - 7:00 PM
+          </span>
+        </div>
+      </div>
+      <div class="header-navigation-wrapper">
+        <div>
+          <%- include('./partials/header') %>
+        </div>
+      </div>
+    </div>
+    <div class="body-wrapper">
+      <main>
+        <section id="breadcrumb" class="breadcrumb-section">
+          <div class="breadcrumb-wrapper">
+            <img src="/assets/img/breadcrumb/services.png" alt="services breadcrumb image">
+            <div class="breadcrumb-overlay"></div>
+            <div class="breadcrumb-text">
+              <h2><span style="color: #F45B1E;">CONTACT US</span></h2>
+              <p>Get in Touch with Us Today</p>
+              <div class="breadcrumb-path">
+                <span style="color: black;">HOME</span> <i class="bi bi-dot"></i> <span>CONTACT US</span>
+              </div>
+            </div>
+          </div>
+         
+        </section>
+        <section id="contactus-section" class="contactus-section my-5">
+          <div class="container" >
+            <div class="section-title">
+              <div class="section-heading ">
+                <p class="heading-line left" />
+                <h5 style="color: #F45B1E;">GET IN TOUCH</h5>
+                <p class="heading-line right" />
+              </div>
+              <div class="section-title-description">
+                <p>
+                  We value your input and look forward to connecting with you. Feel free to reach out for any inquiries, feedback, or collaborations. Our team is here to assist you on your journey to success.
+                </p>
+              </div>
+              
+            </div>
+        
+            <div class="row">
+              <div class="col-lg-5 d-flex align-items-stretch">
+                <div class="info">
+                  <div class="address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>181/1, 4th A cross, 16th E main Rd, KHB colony, 5th block Koramangala, Bangalore, India, Karnataka.</p>
+                  </div>
+        
+                  <div class="email">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>
+                      sivraspaces.interiors@gmail.com
+                    </p>
+                  </div>
+        
+                  <div class="phone">
+                    <i class="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+91 91331 32333<br />+91 81060 37771</p>
+                  </div>
+        
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243.03943555368312!2d77.6228433!3d12.9314237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b3ea52f2c7%3A0x4d12dcbcddd0d08b!2sATL%20interiors!5e0!3m2!1sen!2sin!4v1733066176866!5m2!1sen!2sin"
+                    width="100%"
+                    height="300"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+        
+              <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                <%- include('./partials/get-quote-form'); %>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- footer -->
+        <section id="footer" class="footer-wrapper">
+          <%- include('./partials/footer') %>
+        </section>
+
+        <section id="get-a-quote-sticker" class="get-a-quote-sticker-wrap d-flex flex-column">
+          <%- include('./partials/get-quote-sticker') %>
+        </section>
+
+        <section>
+          <div class="overlay" id="overlay"></div>
+          <div id="get-a-quote-dialog" class="get-a-quote-dialog">
+            <div style="text-align: right;" id="cancel-quote-form">
+              <i class="bi bi-x-circle-fill" style="font-size: 40px;"></i>
+            </div>
+            <div>
+              <%- include('./partials/get-quote-form') %>
+            </div>
+          </div>
+        </section>
+
+      </main>
+      <%- include('./partials/mobile-nav') %>
+    </div>
+  </div>
+  <script src="/assets/JQuery/jquery1.min.js"></script>
+  <script src="/assets/owl-carousel/owl1.carousel.min.js"></script>
+  <script src="/assets/sweetalert/sweetalert2.all.min.js"></script>
+  <script src="/assets/JS/contact-form-submission.js"></script>
+  <script src="/assets/JS/mobile-navigation-script.js"></script>
+  <script src="/assets/JS/get-a-quote-dialog-script.js"></script>
+  <script>
+    function playVideo() {
+      const iframe = document.querySelector('iframe');
+      const cover = document.querySelector('.cover');
+      iframe.style.display = 'block'; // Show the video
+      cover.style.display = 'none'; // Hide the cover
+    }
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $(".testimonial-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        dots: true,
+        items: 1,
+        autoplay: true,
+        autoplayTimeout: 3500,
+        autoplayHoverPause: false,
+      });
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+.info-section .info-card{
+    font-weight: 700;
+    /* font-size: 20px; */
+    line-height: 30px;
+
+}
+.info-section .info-card p{
+    line-height: 30px;
+    height: 153px;
+}
+.info-section .info-card h3{
+    font-family: Orbitron;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+.info-section .info-card .line{
+width: 170px;
+border: 1px solid coral;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 30.25%; /* Aspect ratio: 16:9 */
+    /* height: 0; */
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none; /* Initially hidden */
+  }
+  .video-wrapper .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/whyus/ytvideo.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .cover::before {
+    content: "\25B8";
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.6);
+    padding: 0px 10px;
+    /* border-radius: 50%; */
+  }
+
+
+  .stats-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #111;
+    padding: 20px;
+    width: 80%;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stats-card {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .stats-card h1 {
+    color: var(--primary-red);
+    font-size: 36px;
+  }
+  
+  .stats-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+  .about-why-choose-us-section{
+    background-color: #132023;
+    color: white;
+    padding: 40px 0px;
+  } 
+  .about-why-choose-us-section h5{
+    font-size: 18px;
+  }
+  .about-why-choose-us-card-container{
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgb(66, 66, 66);
+    padding: 20px;
+  }
+  .about-why-choose-us-card-container .about-why-choose-us-card-icon{
+    background: var(--primary-red);
+    padding: 10px;
+    width: 70px;
+    height: 70px;
+  }
+  .about-why-choose-us-card-container .about-why-choose-us-card-icon .icon-image{
+    width: 50px;
+    height: 50px;
+  }
+  .about-why-choose-us-cards .about-why-choose-us-card-content .about-why-choose-us-card-title{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+  }
+  .about-why-choose-us-card-underline{
+    width: 200px;
+    border: 2px solid var(--primary-red);
+  }
+
+
+  /* responsiveness design */
+  @media (min-width: 899px) and (max-width: 992px) {
+    .header-contactdetails-textbox>span {
+        size: 10px;
+        line-height: 12px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .header-contactdetails-wrapper {
+        display: none;
+    }
+}

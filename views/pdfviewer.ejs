@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATL Interiors</title>
+    <style>
+        .pdf {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+  
+    .pdf-container {
+            width: 400px;     /* Adjust to your desired width */
+            height: 250px;    /* The container height (max height for the PDF preview) */
+            overflow: hidden; /* Hide anything that overflows from the container */
+            border: 1px solid #000;
+        }
+        #pdf-canvas {
+            width: 100%;
+            height: auto;
+        }
+  
+    </style>
+</head>
+
+<body>
+    <form action="/catalog/upload" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required />
+
+        <label for="pdf">Upload PDF:</label>
+        <input type="file" id="pdf" name="pdf" accept="application/pdf" required />
+
+        <label for="thumbnail">Upload Thumbnail Image:</label>
+        <input type="file" id="thumbnail" name="thumbnail" accept="image/*" required />
+
+        <button type="submit">Upload</button>
+    </form>
+    <div class="pdf-container">
+        <canvas id="pdf-canvas"></canvas>
+    </div>
+    <div style="margin-top: 50px;">
+        <!-- <object class="pdf" data="/uploads/1733579687445-sample.pdf"
+            width="800" height="500"> -->
+            <!-- <embed src="/uploads/1733579687445-sample.pdf" type="application/pdf" width="100%" height="600px"> -->
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script>
+        const url = '/uploads/1733580679451-Offer Letter -Ganesh (1).pdf';   // Path to your PDF file
+
+        // Load the PDF using PDF.js
+        pdfjsLib.getDocument(url).promise.then(function(pdf) {
+            console.log('PDF loaded');
+
+            // Get the first page of the PDF
+            pdf.getPage(1).then(function(page) {
+                const containerHeight = 500;  // Max container height
+                const viewport = page.getViewport({ scale: 1 });
+
+                // Calculate the scale to fit the entire page
+                const scale = containerHeight / viewport.height;
+
+                // Calculate the scale to fit only half of the page
+                const halfPageScale = containerHeight / (viewport.height / 2);
+
+                // Create the viewport for half the page
+                const scaledViewport = page.getViewport({ scale: halfPageScale });
+
+                // Set up the canvas to render the PDF page
+                const canvas = document.getElementById('pdf-canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = scaledViewport.width;
+                canvas.height = scaledViewport.height;
+
+                // Render the top half of the page on the canvas (set offset to 0 for the top part)
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: scaledViewport
+                };
+                page.render(renderContext);
+            });
+        }).catch(function(error) {
+            console.error('Error loading PDF:', error);
+        });
+    </script>
+</body>
+</html>

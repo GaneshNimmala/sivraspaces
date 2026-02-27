@@ -1,0 +1,99 @@
+.contactus-section{
+    background-color: white;
+}
+.contactus-section .info {
+    /* border-top: 3px solid #20247b;
+    border-bottom: 3px solid #20247b; */
+    padding: 30px;
+    /* background: #fff; */
+    width: 100%;
+    box-shadow: 0 0 3px #c6c6c6db;
+    /* border: 2px solid rgb(118, 118, 118); */
+    border-radius: 10px;
+  }
+  
+  .contactus-section .info i {
+    font-size: 20px;
+  
+    color: #20247b;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #f76d10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .contactus-section .info h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #37517e;
+  }
+  
+  .contactus-section .info p {
+    padding: 0 0 10px 60px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 28px;
+  }
+  
+  .contactus-section .info .email p {
+    padding-top: 5px;
+  }
+  
+  .contactus-section .info .social-links {
+    padding-left: 60px;
+  }
+  
+  .contactus-section .info .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+    margin-right: 10px;
+  }
+  
+  .contactus-section .info .social-links a:hover {
+    background: #20247b;
+    color: #fff;
+  }
+  
+  .contactus-section .info .email:hover i,
+  .contactus-section .info .address:hover i,
+  .contactus-section .info .phone:hover i {
+    background: #20247b;
+    color: #fff;
+  }
+  .contact{
+    width: 100%;
+    box-shadow: 0 0 3px #c6c6c6db;
+    /* border: 2px solid rgb(118, 118, 118); */
+    border-radius: 10px;
+  
+  }
+
+  @media (min-width: 899px) and (max-width: 992px) {
+    .header-contactdetails-textbox>span {
+        size: 10px;
+        line-height: 12px;
+    }
+}
+
+@media only screen and (max-width: 930px) {
+    .header-contactdetails-wrapper {
+        display: none;
+    }
+}
