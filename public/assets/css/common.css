@@ -653,10 +653,10 @@ Section heading Css
   position: absolute;
   /* top: 90%; */
   left: 0;
-  display: none; 
-  background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   z-index: 2;
   width: 150px;
   border-radius: 10px;
@@ -668,13 +668,13 @@ Section heading Css
 
 .submenu a {
   text-decoration: none;
-  color: #333;
+  color: #ffffff !important;
   display: block;
   margin-bottom: 10px;
 }
 
 .submenu li a:hover {
-  background-color: #f7f7f7;
+  color: var(--accent-gold) !important;
 }
 
 /* Show submenu on hover */
@@ -760,4 +760,11 @@ Section heading Css
   .header-contactdetails-wrapper {
       display: none;
   }
+}
+
+/* Interior Design Services Section */
+.interior-services-section .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
 }

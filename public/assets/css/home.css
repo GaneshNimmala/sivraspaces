@@ -384,6 +384,17 @@
 
 
 
+.our-services-section .service-card-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.our-services-section .service-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .our-services-section .service-card-title {
     height: 108px;
     display: flex;
