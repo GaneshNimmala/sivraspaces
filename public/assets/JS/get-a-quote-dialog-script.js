@@ -17,6 +17,16 @@ cancelQuoteForm.addEventListener("click", () => {
   getAQuoteDialogBox.setAttribute("aria-hidden", "true"); // Accessibility
 });
 
+const getInstantEstimateBtn = document.getElementById("get-instant-estimate-btn");
+if (getInstantEstimateBtn) {
+  getInstantEstimateBtn.addEventListener("click", () => {
+    document.body.classList.add("no-scroll");
+    overlay.classList.add("show");
+    getAQuoteDialogBox.classList.add("show");
+    getAQuoteDialogBox.setAttribute("aria-hidden", "false");
+  });
+}
+
 
   document.addEventListener("DOMContentLoaded", () => {
     // Get the current path
