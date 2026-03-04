@@ -21,6 +21,30 @@ router.get("/services/interior-design", (req, res) => {
   res.render("interiordesign");
 });
 
+router.get("/services/kitchen-interiors", (req, res) => {
+  res.render("services/kitchen-interiors");
+});
+
+router.get("/services/wardrobe", (req, res) => {
+  res.render("services/wardrobe");
+});
+
+router.get("/services/tv-unit", (req, res) => {
+  res.render("services/tv-unit");
+});
+
+router.get("/services/cupboard-works", (req, res) => {
+  res.render("services/cupboard-works");
+});
+
+router.get("/services/pooja-unit", (req, res) => {
+  res.render("services/pooja-unit");
+});
+
+router.get("/services/upvc-windows", (req, res) => {
+  res.render("services/upvc-windows");
+});
+
 router.get("/services/marketing", (req, res) => {
   res.render("marketing");
 });

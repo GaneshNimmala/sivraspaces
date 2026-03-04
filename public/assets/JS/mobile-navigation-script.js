@@ -24,3 +24,13 @@ const menuIcon = document.getElementById("mobile-menu-bar-expand-icon");
       mobileDrawer.classList.remove("open");
       drawerOverlay.classList.remove("active");
     })
+
+    // Mobile Services submenu toggle
+    const servicesChevron = document.getElementById("mobile-services-chevron");
+    const servicesSubmenu = document.getElementById("mobile-services-submenu");
+
+    servicesChevron.addEventListener("click", (e) => {
+      e.preventDefault();
+      servicesSubmenu.classList.toggle("open");
+      servicesChevron.classList.toggle("open");
+    });

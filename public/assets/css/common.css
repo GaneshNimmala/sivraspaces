@@ -640,6 +640,58 @@ Section heading Css
   margin-top: 5px;
 } */
 
+/* Mobile nav dropdown */
+.mobile-nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-dropdown-toggle a {
+  flex: 1;
+}
+
+.mobile-chevron {
+  font-size: 14px;
+  color: #333;
+  transition: transform 0.3s ease;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.mobile-chevron.open {
+  transform: rotate(180deg);
+}
+
+.mobile-nav-submenu {
+  list-style: none;
+  padding: 0 0 0 45px;
+  margin: 0;
+  display: none;
+  overflow: hidden;
+}
+
+.mobile-nav-submenu.open {
+  display: block;
+}
+
+.mobile-nav-submenu li {
+  margin: 12px 0;
+}
+
+.mobile-nav-submenu li a {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #555 !important;
+  display: flex;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.mobile-nav-submenu li a i {
+  font-size: 16px;
+}
+
 /* Style for the dropdown menu */
 .dropdown {
   position: relative;
